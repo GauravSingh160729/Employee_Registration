@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Update Employee{% endblock title %}
+
+{% block content %}
+<div class="mt-5 ">
+   <form class="col-sm-4 card p-3 shadow-lg mx-auto" method="post">
+     {% csrf_token %}
+      <h2 class="text-center">Update Employee</h2>
+      <hr>
+      <div class="mb-3">
+        <label class="form-label">Employee Name</label>
+        <input name="Name" type="text" class="form-control" value="{{ employee.Name }}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <input name="Gender" type="text" class="form-control" value="{{ employee.Gender }}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Designation</label>
+        <input name="Designation" type="text" class="form-control" value="{{ employee.Designation }}">
+      </div>
+     
+      <button type="submit" class="btn btn-primary">Update</button>
+   </form>
+</div>
+{% endblock content %}
